@@ -5,7 +5,7 @@ Build of MediaWiki for Sandstorm
 
 Instructions:
 - Make an arc subdirectory
-- Download mediawiki-1.23.0.tar.gz
+- Download mediawiki-1.23.0.tar.gz and put it in the arc subdirectory
 - run ./install.sh
 
 Sandstorm launch command:
