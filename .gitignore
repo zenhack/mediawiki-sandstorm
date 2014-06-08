@@ -1,0 +1,6 @@
+# editor files
+*.swp
+*~
+
+# build files
+/build
