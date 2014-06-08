@@ -8,8 +8,6 @@ bin/cp
 bin/dash
 bin/mkdir
 bin/sh
-build/data
-build/data/wiki.sqlite
 build/mediawiki/mediawiki-1.23.0/LocalSettings.php
 build/mediawiki/mediawiki-1.23.0/extensions
 build/mediawiki/mediawiki-1.23.0/includes/Article.php
@@ -58,6 +56,7 @@ build/mediawiki/mediawiki-1.23.0/includes/Xml.php
 build/mediawiki/mediawiki-1.23.0/includes/actions/Action.php
 build/mediawiki/mediawiki-1.23.0/includes/actions/EditAction.php
 build/mediawiki/mediawiki-1.23.0/includes/actions/FormlessAction.php
+build/mediawiki/mediawiki-1.23.0/includes/actions/HistoryAction.php
 build/mediawiki/mediawiki-1.23.0/includes/actions/InfoAction.php
 build/mediawiki/mediawiki-1.23.0/includes/actions/ViewAction.php
 build/mediawiki/mediawiki-1.23.0/includes/api/ApiBase.php
@@ -106,6 +105,10 @@ build/mediawiki/mediawiki-1.23.0/includes/deferred/SearchUpdate.php
 build/mediawiki/mediawiki-1.23.0/includes/deferred/SiteStatsUpdate.php
 build/mediawiki/mediawiki-1.23.0/includes/deferred/SqlDataUpdate.php
 build/mediawiki/mediawiki-1.23.0/includes/deferred/ViewCountUpdate.php
+build/mediawiki/mediawiki-1.23.0/includes/diff/DairikiDiff.php
+build/mediawiki/mediawiki-1.23.0/includes/diff/DiffFormatter.php
+build/mediawiki/mediawiki-1.23.0/includes/diff/DifferenceEngine.php
+build/mediawiki/mediawiki-1.23.0/includes/diff/TableDiffFormatter.php
 build/mediawiki/mediawiki-1.23.0/includes/exception/MWException.php
 build/mediawiki/mediawiki-1.23.0/includes/exception/MWExceptionHandler.php
 build/mediawiki/mediawiki-1.23.0/includes/filebackend/lockmanager/FSLockManager.php
@@ -254,6 +257,8 @@ build/mediawiki/mediawiki-1.23.0/resources/src/mediawiki.action/mediawiki.action
 build/mediawiki/mediawiki-1.23.0/resources/src/mediawiki.action/mediawiki.action.edit.editWarning.js
 build/mediawiki/mediawiki-1.23.0/resources/src/mediawiki.action/mediawiki.action.edit.js
 build/mediawiki/mediawiki-1.23.0/resources/src/mediawiki.action/mediawiki.action.edit.styles.css
+build/mediawiki/mediawiki-1.23.0/resources/src/mediawiki.action/mediawiki.action.history.diff.css
+build/mediawiki/mediawiki-1.23.0/resources/src/mediawiki.action/mediawiki.action.history.js
 build/mediawiki/mediawiki-1.23.0/resources/src/mediawiki.action/mediawiki.action.view.postEdit.css
 build/mediawiki/mediawiki-1.23.0/resources/src/mediawiki.action/mediawiki.action.view.postEdit.js
 build/mediawiki/mediawiki-1.23.0/resources/src/mediawiki.api/mediawiki.api.js
