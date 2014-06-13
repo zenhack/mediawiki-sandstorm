@@ -1,4 +1,4 @@
-@0xd7dcb777a79fe158;
+@0xb2b626bd4d31c1ba;
 
 using Spk = import "/sandstorm/package.capnp";
 # This imports:
@@ -9,7 +9,7 @@ const pkgdef :Spk.PackageDefinition = (
   # The package definition. Note that the spk tool looks specifically for the
   # "pkgdef" constant.
 
-  id = "c0nczz5ca4jdt7pvzvxvkaw4rh1s7423thq00qn1d00hn9p50zu0",
+  id = "y88wavuqwz0p3tjcqtdt8egauq9hpnzr1s9efq1d63rwtj1w0ech",
   # Your app ID is actually its public key. The private key was placed in
   # your keyring. All updates must be signed with the same key.
 
@@ -21,7 +21,7 @@ const pkgdef :Spk.PackageDefinition = (
 
     actions = [
       # Define your "new document" handlers here.
-      ( title = (defaultText = "New Example App Instance"),
+      ( title = (defaultText = "New MediaWiki"),
         command = .myCommand
         # The command to run when starting for the first time. (".myCommand"
         # is just a constant defined at the bottom of the file.)
@@ -55,7 +55,7 @@ const pkgdef :Spk.PackageDefinition = (
   # `spk dev` will write a list of all the files your app uses to this file.
   # You should review it later, before shipping your app.
 
-  alwaysInclude = []
+  alwaysInclude = ["core"]
   # Fill this list with more names of files or directories that should be
   # included in your package, even if not listed in sandstorm-files.list.
   # Use this to force-include stuff that you know you need but which may
@@ -65,11 +65,7 @@ const pkgdef :Spk.PackageDefinition = (
 
 const myCommand :Spk.Manifest.Command = (
   # Here we define the command used to start up your server.
-  #argv = ["/sandstorm-http-bridge", "10000", "--", "strace", "bash", "./launch.sh"],
-  #argv = ["/sandstorm-http-bridge", "10000", "--", "strace", "./launch.sh"],
-  argv = ["/sandstorm-http-bridge", "10000", "--", "bash", "./launch.sh"],
-  #argv = ["/sandstorm-http-bridge", "10000", "--", "strace", "-f", "bash", "./launch.sh"],
-  #argv = ["/sandstorm-http-bridge", "10000", "--", "php5", "-S", "127.0.0.1:10000"],
+  argv = ["/sandstorm-http-bridge", "10000", "--", "./launch.sh"],
   environ = [
     # Note that this defines the *entire* environment seen by your app.
     (key = "PATH", value = "/usr/local/bin:/usr/bin:/bin")

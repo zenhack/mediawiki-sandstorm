@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -e
 
@@ -19,5 +19,5 @@ fi
 #find /var
 
 echo "launching server"
-cd build/mediawiki/mediawiki-1.23.0
+cd core
 php5 -S 127.0.0.1:10000
