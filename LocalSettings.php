@@ -29,7 +29,7 @@ $wgScriptPath = "";
 $wgScriptExtension = ".php";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://localhost:10000";
+$wgServer = 'http://' . $_SERVER['HTTP_HOST'];
 
 ## The relative URL path to the skins directory
 $wgStylePath = "$wgScriptPath/skins";
@@ -40,7 +40,7 @@ $wgLogo = "$wgStylePath/common/images/wiki.png";
 
 ## UPO means: this is also a user preference option
 
-$wgEnableEmail = false;
+$wgEnableEmail = true;
 $wgEnableUserEmail = true; # UPO
 
 $wgEmergencyContact = "apache@localhost:10000";
@@ -58,7 +58,7 @@ $wgDBuser = "";
 $wgDBpassword = "";
 
 # SQLite-specific settings
-$wgSQLiteDataDir = "/home/devstation/src/mediawiki/build/data";
+$wgSQLiteDataDir = "/var/opt/wiki";
 
 ## Shared memory settings
 $wgMainCacheType = CACHE_NONE;
@@ -92,11 +92,11 @@ $wgShellLocale = "en_US.utf8";
 # Site language code, should be one of the list in ./languages/Names.php
 $wgLanguageCode = "en";
 
-$wgSecretKey = "7deab24e391ffe6cc12406e3fae4dace58b6388adbb0bff4580f3448abe6bc8e";
+$wgSecretKey = "ccd66ae0be6d755d059bd990e8fc98c9a8b63b95f055b781f054ad8a47f7677c";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "ab8e4c05c0b74cda";
+$wgUpgradeKey = "1e37be2963f3deaa";
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, ie 'cologneblue', 'monobook', 'vector':
