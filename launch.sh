@@ -19,5 +19,5 @@ fi
 #find /var
 
 echo "launching server"
-cd core
+cd mediawiki-core
 php5 -S 127.0.0.1:10000
