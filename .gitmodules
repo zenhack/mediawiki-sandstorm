@@ -1,3 +1,4 @@
-[submodule "core"]
-	path = core
-	url = https://gerrit.wikimedia.org/r/p/mediawiki/core.git
+[submodule "mediawiki-core"]
+	path = mediawiki-core
+	url = git@github.com:jparyani/mediawiki-core.git
+	branch = sandstorm
