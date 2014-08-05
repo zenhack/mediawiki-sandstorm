@@ -118,3 +118,102 @@ $wgDiff3 = "/usr/bin/diff3";
 # End of automatically generated settings.
 # Add more configuration options below.
 
+$wgBreakFrames = false;
+$wgEditPageFrameOptions = false;
+$wgGroupPermissions = array();
+
+/** @cond file_level_code */
+// Implicit group for all visitors
+$wgGroupPermissions['*']['createaccount'] = false;
+$wgGroupPermissions['*']['read'] = true;
+$wgGroupPermissions['*']['edit'] = false;
+$wgGroupPermissions['*']['createpage'] = false;
+$wgGroupPermissions['*']['createtalk'] = false;
+$wgGroupPermissions['*']['writeapi'] = false;
+$wgGroupPermissions['*']['editmyusercss'] = true;
+$wgGroupPermissions['*']['editmyuserjs'] = true;
+$wgGroupPermissions['*']['viewmywatchlist'] = true;
+$wgGroupPermissions['*']['editmywatchlist'] = true;
+$wgGroupPermissions['*']['viewmyprivateinfo'] = true;
+$wgGroupPermissions['*']['editmyprivateinfo'] = true;
+$wgGroupPermissions['*']['editmyoptions'] = true;
+#$wgGroupPermissions['*']['patrolmarks'] = false; // let anons see what was patrolled
+
+// editor group
+$wgGroupPermissions['editor']['move'] = true;
+$wgGroupPermissions['editor']['move-subpages'] = true;
+$wgGroupPermissions['editor']['move-rootuserpages'] = true; // can move root userpages
+$wgGroupPermissions['editor']['movefile'] = true;
+$wgGroupPermissions['editor']['read'] = true;
+$wgGroupPermissions['editor']['edit'] = true;
+$wgGroupPermissions['editor']['createpage'] = true;
+$wgGroupPermissions['editor']['createtalk'] = true;
+$wgGroupPermissions['editor']['writeapi'] = true;
+$wgGroupPermissions['editor']['upload'] = true;
+$wgGroupPermissions['editor']['reupload'] = true;
+$wgGroupPermissions['editor']['reupload-shared'] = true;
+$wgGroupPermissions['editor']['minoredit'] = true;
+$wgGroupPermissions['editor']['purge'] = true; // can use ?action=purge without clicking "ok"
+$wgGroupPermissions['editor']['sendemail'] = true;
+
+// Implicit group for accounts that pass $wgAutoConfirmAge
+$wgGroupPermissions['autoconfirmed']['autoconfirmed'] = true;
+$wgGroupPermissions['autoconfirmed']['editsemiprotected'] = true;
+
+// Users with bot privilege can have their edits hidden
+// from various log pages by default
+$wgGroupPermissions['bot']['bot'] = true;
+$wgGroupPermissions['bot']['autoconfirmed'] = true;
+$wgGroupPermissions['bot']['editsemiprotected'] = true;
+$wgGroupPermissions['bot']['nominornewtalk'] = true;
+$wgGroupPermissions['bot']['autopatrol'] = true;
+$wgGroupPermissions['bot']['suppressredirect'] = true;
+$wgGroupPermissions['bot']['apihighlimits'] = true;
+$wgGroupPermissions['bot']['writeapi'] = true;
+
+// Most extra permission abilities go to this group
+$wgGroupPermissions['sysop']['block'] = true;
+$wgGroupPermissions['sysop']['createaccount'] = true;
+$wgGroupPermissions['sysop']['delete'] = true;
+// can be separately configured for pages with > $wgDeleteRevisionsLimit revs
+$wgGroupPermissions['sysop']['bigdelete'] = true;
+// can view deleted history entries, but not see or restore the text
+$wgGroupPermissions['sysop']['deletedhistory'] = true;
+// can view deleted revision text
+$wgGroupPermissions['sysop']['deletedtext'] = true;
+$wgGroupPermissions['sysop']['undelete'] = true;
+$wgGroupPermissions['sysop']['editinterface'] = true;
+$wgGroupPermissions['sysop']['editusercss'] = true;
+$wgGroupPermissions['sysop']['edituserjs'] = true;
+$wgGroupPermissions['sysop']['import'] = true;
+$wgGroupPermissions['sysop']['importupload'] = true;
+$wgGroupPermissions['sysop']['move'] = true;
+$wgGroupPermissions['sysop']['move-subpages'] = true;
+$wgGroupPermissions['sysop']['move-rootuserpages'] = true;
+$wgGroupPermissions['sysop']['patrol'] = true;
+$wgGroupPermissions['sysop']['autopatrol'] = true;
+$wgGroupPermissions['sysop']['protect'] = true;
+$wgGroupPermissions['sysop']['editprotected'] = true;
+$wgGroupPermissions['sysop']['proxyunbannable'] = true;
+$wgGroupPermissions['sysop']['rollback'] = true;
+$wgGroupPermissions['sysop']['upload'] = true;
+$wgGroupPermissions['sysop']['reupload'] = true;
+$wgGroupPermissions['sysop']['reupload-shared'] = true;
+$wgGroupPermissions['sysop']['unwatchedpages'] = true;
+$wgGroupPermissions['sysop']['autoconfirmed'] = true;
+$wgGroupPermissions['sysop']['editsemiprotected'] = true;
+$wgGroupPermissions['sysop']['ipblock-exempt'] = true;
+$wgGroupPermissions['sysop']['blockemail'] = true;
+$wgGroupPermissions['sysop']['markbotedits'] = true;
+$wgGroupPermissions['sysop']['apihighlimits'] = true;
+$wgGroupPermissions['sysop']['browsearchive'] = true;
+$wgGroupPermissions['sysop']['noratelimit'] = true;
+$wgGroupPermissions['sysop']['movefile'] = true;
+$wgGroupPermissions['sysop']['unblockself'] = true;
+$wgGroupPermissions['sysop']['suppressredirect'] = true;
+#$wgGroupPermissions['sysop']['upload_by_url'] = true;
+#$wgGroupPermissions['sysop']['mergehistory'] = true;
+
+// Permission to change users' group assignments
+$wgGroupPermissions['bureaucrat']['userrights'] = true;
+$wgGroupPermissions['bureaucrat']['noratelimit'] = true;
