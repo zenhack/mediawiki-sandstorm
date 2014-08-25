@@ -41,14 +41,7 @@ const pkgdef :Spk.PackageDefinition = (
     # automatically by running it on a FUSE filesystem. So, the mappings
     # here are only to tell it where to find files that the app wants.
     searchPath = [
-      ( sourcePath = "." ),  # Search this directory first.
-      ( sourcePath = "/",    # Then search the system root directory.
-        hidePaths = [ "home", "proc", "sys" ]
-        # You probably don't want the app pulling files from these places,
-        # so we hide them. Note that /dev, /var, and /tmp are implicitly
-        # hidden because Sandstorm itself provides them.
-      ),
-      ( sourcePath = ".", packagePath = "mediawiki-core" )
+      ( sourcePath = "./dockerenv" )
     ]
   ),
 
@@ -56,7 +49,7 @@ const pkgdef :Spk.PackageDefinition = (
   # `spk dev` will write a list of all the files your app uses to this file.
   # You should review it later, before shipping your app.
 
-  alwaysInclude = ["mediawiki-core"],
+  alwaysInclude = ["opt/app", "usr/lib/python3.4"],
   # Fill this list with more names of files or directories that should be
   # included in your package, even if not listed in sandstorm-files.list.
   # Use this to force-include stuff that you know you need but which may
@@ -68,9 +61,10 @@ const pkgdef :Spk.PackageDefinition = (
 
 const myCommand :Spk.Manifest.Command = (
   # Here we define the command used to start up your server.
-  argv = ["/sandstorm-http-bridge", "10000", "--", "./launch.sh"],
+  argv = ["/sandstorm-http-bridge", "33411", "--", "/opt/app/run_grain.sh"],
   environ = [
     # Note that this defines the *entire* environment seen by your app.
-    (key = "PATH", value = "/usr/local/bin:/usr/bin:/bin")
+    (key = "PATH", value = "/usr/local/bin:/usr/bin:/bin"),
+    (key = "HOME", value = "/var")
   ]
 );

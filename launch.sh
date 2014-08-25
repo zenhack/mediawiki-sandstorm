@@ -16,7 +16,6 @@ fi
 if [ ! -d "/var/lib/php5" ]; then
     mkdir /var/lib/php5
 fi
-#find /var
 
 echo "launching server"
 cd mediawiki-core

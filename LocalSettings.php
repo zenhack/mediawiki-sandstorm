@@ -61,7 +61,7 @@ $wgDBpassword = "";
 $wgSQLiteDataDir = "/var/opt/wiki";
 
 ## Shared memory settings
-$wgMainCacheType = CACHE_NONE;
+$wgMainCacheType = CACHE_ACCEL;
 $wgMemCachedServers = array();
 
 ## To enable image uploads, make sure the 'images' directory
@@ -118,8 +118,10 @@ $wgDiff3 = "/usr/bin/diff3";
 # End of automatically generated settings.
 # Add more configuration options below.
 
+$wgUsePathInfo = true;
 $wgBreakFrames = false;
 $wgEditPageFrameOptions = false;
+$wgEnableUserEmail = false;
 $wgGroupPermissions = array();
 
 /** @cond file_level_code */
@@ -134,7 +136,7 @@ $wgGroupPermissions['*']['editmyusercss'] = true;
 $wgGroupPermissions['*']['editmyuserjs'] = true;
 $wgGroupPermissions['*']['viewmywatchlist'] = true;
 $wgGroupPermissions['*']['editmywatchlist'] = true;
-$wgGroupPermissions['*']['viewmyprivateinfo'] = true;
+$wgGroupPermissions['*']['viewmyprivateinfo'] = false;
 $wgGroupPermissions['*']['editmyprivateinfo'] = true;
 $wgGroupPermissions['*']['editmyoptions'] = true;
 #$wgGroupPermissions['*']['patrolmarks'] = false; // let anons see what was patrolled
@@ -217,3 +219,7 @@ $wgGroupPermissions['sysop']['suppressredirect'] = true;
 // Permission to change users' group assignments
 $wgGroupPermissions['bureaucrat']['userrights'] = true;
 $wgGroupPermissions['bureaucrat']['noratelimit'] = true;
+$wgScriptPath     = "";
+$wgArticlePath      = "/$1";
+$wgUsePathInfo      = true;
+$wgScriptExtension  = ".php";
