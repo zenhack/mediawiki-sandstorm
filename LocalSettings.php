@@ -29,14 +29,14 @@ $wgScriptPath = "";
 $wgScriptExtension = ".php";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = 'http://' . $_SERVER['HTTP_HOST'];
+$wgServer = '//' . $_SERVER['HTTP_HOST'];
 
 ## The relative URL path to the skins directory
 $wgStylePath = "$wgScriptPath/skins";
 
 ## The relative URL path to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
-$wgLogo = "$wgStylePath/common/images/wiki.png";
+$wgLogo = "";
 
 ## UPO means: this is also a user preference option
 
