@@ -2,7 +2,7 @@
 # sure you lock down to a specific version, not to `latest`!
 # See https://github.com/phusion/baseimage-docker/blob/master/Changelog.md for
 # a list of version numbers.
-FROM phusion/baseimage:0.9.13
+FROM phusion/baseimage:0.9.16
 
 # Set correct environment variables.
 ENV HOME /root
@@ -23,6 +23,8 @@ RUN apt-get -y install php5 php5-sqlite
 # Install nginx
 RUN apt-get -y install php5-fpm nginx
 RUN apt-get -y install php-apc
+
+RUN apt-get -y install imagemagick
 
 RUN mkdir /etc/service/nginx
 ADD nginx.sh /etc/service/nginx/run

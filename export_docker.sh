@@ -27,5 +27,8 @@ cd ../..
 echo '127.0.0.1       localhost
 nameserver 127.0.0.1' > dockerenv/etc/hosts
 
+rm -rf dockerenv/opt/app/images
+ln -s /var/images dockerenv/opt/app/images
+
 # copy local version of my_init over
 cp my_init dockerenv/sbin/
