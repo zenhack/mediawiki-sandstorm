@@ -19,7 +19,7 @@ const pkgdef :Spk.PackageDefinition = (
 
     appTitle = (defaultText = "MediaWiki"),
 
-    appVersion = 1,  # Increment this for every release.
+    appVersion = 2,  # Increment this for every release.
 
     appMarketingVersion = (defaultText = "1.23.1"),
 
@@ -33,11 +33,40 @@ const pkgdef :Spk.PackageDefinition = (
       )
     ],
 
-    continueCommand = .myCommand
-    # This is the command called to start your app back up after it has been
-    # shut down for inactivity. Here we're using the same command as for
-    # starting a new instance, but you could use different commands for each
-    # case.
+    continueCommand = .myCommand,
+
+    metadata = (
+      icons = (
+        appGrid = (png = (
+          dpi1x = embed "app-graphics/mediawiki-128.png",
+          dpi2x = embed "app-graphics/mediawiki-256.png"
+        )),
+        grain = (svg = ( embed "app-graphics/mediawiki-24.svg")),
+        market = (png = (
+          dpi1x = embed "app-graphics/mediawiki-150.png",
+          dpi2x = embed "app-graphics/mediawiki-300.png"
+        )),
+      ),
+
+      website = "https://www.mediawiki.org",
+      codeUrl = "https://github.com/jparyani/mediawiki-sandstorm",
+      license = (openSource = gpl2),
+      categories = [productivity],
+
+      author = (
+        contactEmail = "jparyani@sandstorm.io",
+        pgpSignature = embed "pgp-signature",
+        upstreamAuthor = "MediaWiki Contributors",
+      ),
+      pgpKeyring = embed "pgp-keyring",
+
+      description = (defaultText = embed "description.md"),
+      changeLog = (defaultText = embed "../mediawiki-core/HISTORY"),
+
+      screenshots = [
+        (width = 448, height = 351, png = embed "sandstorm-screenshot.png")
+      ],
+    ),
   ),
 
   sourceMap = (
@@ -47,6 +76,7 @@ const pkgdef :Spk.PackageDefinition = (
     # here are only to tell it where to find files that the app wants.
     searchPath = [
       ( packagePath = "opt/app/mediawiki-core/LocalSettings.php", sourcePath = "/opt/app/LocalSettings.php" ),
+      ( packagePath = "opt/app/.git", sourcePath = "/opt/app/.gitignore" ),
       ( sourcePath = "." ),  # Search this directory first.
       ( sourcePath = "/",    # Then search the system root directory.
         hidePaths = [ "home", "proc", "sys",
@@ -70,7 +100,18 @@ const pkgdef :Spk.PackageDefinition = (
   # not have been detected as a dependency during `spk dev`. If you list
   # a directory here, its entire contents will be included recursively.
 
-  bridgeConfig = (viewInfo = (permissions = [(name = "admin")])),
+  bridgeConfig = (
+    viewInfo = (
+      permissions = [(name = "admin")],
+      roles = [(title = (defaultText = "admin"),
+                permissions = [true,],
+                verbPhrase = (defaultText = "can administer wiki")),
+               (title = (defaultText = "viewer"),
+                permissions = [false],
+                verbPhrase = (defaultText = "can view any article"),
+                default = true)],
+    )
+  ),
 );
 
 const myCommand :Spk.Manifest.Command = (
