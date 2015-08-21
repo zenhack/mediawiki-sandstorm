@@ -19,9 +19,9 @@ const pkgdef :Spk.PackageDefinition = (
 
     appTitle = (defaultText = "MediaWiki"),
 
-    appVersion = 2,  # Increment this for every release.
+    appVersion = 3,  # Increment this for every release.
 
-    appMarketingVersion = (defaultText = "1.23.1"),
+    appMarketingVersion = (defaultText = "1.25.2"),
 
     actions = [
       # Define your "new document" handlers here.

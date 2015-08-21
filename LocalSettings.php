@@ -87,7 +87,7 @@ $wgShellLocale = "en_US.utf8";
 ## Set $wgCacheDirectory to a writable directory on the web server
 ## to make your wiki go slightly faster. The directory should not
 ## be publically accessible from the web.
-#$wgCacheDirectory = "$IP/cache";
+$wgCacheDirectory = "$IP/cache";
 
 # Site language code, should be one of the list in ./languages/Names.php
 $wgLanguageCode = "en";
@@ -114,9 +114,6 @@ $wgRightsIcon = "";
 
 # Path to the GNU diff3 utility. Used for conflict resolution.
 $wgDiff3 = "/usr/bin/diff3";
-
-
-
 # End of automatically generated settings.
 # Add more configuration options below.
 
@@ -225,3 +222,15 @@ $wgScriptPath     = "";
 $wgArticlePath      = "/$1";
 $wgUsePathInfo      = true;
 $wgScriptExtension  = ".php";
+
+/**
+ * The filesystem path of the images directory. Defaults to "{$IP}/images".
+ */
+$wgUploadDirectory = "/var/mediawiki-images";
+
+/**
+ * Directory where the cached page will be saved.
+ * Defaults to "{$wgUploadDirectory}/cache".
+ */
+$wgCacheDirectory = "/var/mediawiki-cache";
+
