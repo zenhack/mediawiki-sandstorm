@@ -25,11 +25,11 @@ server {
     }
 
     location / {
-        try_files $uri $uri/ @rewrite;
+        try_files \$uri \$uri/ @rewrite;
     }
 
     location @rewrite {
-        rewrite ^/(.*)$ /index.php?title=$1&$args;
+        rewrite ^/(.*)$ /index.php?title=\$1&\$args;
     }
 
     location ^~ /maintenance/ {
@@ -37,7 +37,7 @@ server {
     }
 
     location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
-        try_files $uri /index.php;
+        try_files \$uri /index.php;
         expires max;
         log_not_found off;
     }
