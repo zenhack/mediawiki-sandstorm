@@ -22,7 +22,7 @@ mkdir -p /var/mediawiki-cache
 
 # If we haven't created /var/mediawiki-images to store user uploads yet,
 # do that now.
-mkdir -p /var/mediawiki-images
+test -e /var/mediawiki-images || cp -r /opt/app/mediawiki-core/images.orig /var/mediawiki-images 
 
 # Spawn mysqld, php
 /usr/sbin/php5-fpm --nodaemonize --fpm-config /etc/php5/fpm/php-fpm.conf &
