@@ -13,6 +13,11 @@ server {
 
     server_name localhost;
     root /opt/app/mediawiki-core;
+    
+    # increase upload defaults
+    client_max_body_size 1000M;
+    client_header_timeout 30m;
+    client_body_timeout 30m;
 
     index index.php;
 

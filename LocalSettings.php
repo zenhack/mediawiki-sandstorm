@@ -233,3 +233,5 @@ $wgScriptExtension  = ".php";
  * Defaults to "{$wgUploadDirectory}/cache".
  */
 $wgCacheDirectory = "/var/mediawiki-cache";
+
+$wgMaxUploadSize = 100 * 1024 * 1024;
