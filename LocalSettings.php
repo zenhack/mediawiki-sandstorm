@@ -226,11 +226,10 @@ $wgScriptExtension  = ".php";
 /**
  * The filesystem path of the images directory. Defaults to "{$IP}/images".
  */
-$wgUploadDirectory = "/var/mediawiki-images";
+// $wgUploadDirectory = "/var/mediawiki-images";
 
 /**
  * Directory where the cached page will be saved.
  * Defaults to "{$wgUploadDirectory}/cache".
  */
 $wgCacheDirectory = "/var/mediawiki-cache";
-
