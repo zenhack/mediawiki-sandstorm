@@ -16,6 +16,8 @@ server {
 
     index index.php;
 
+	  gzip off;
+
     location ~ \\.php\$ {
         fastcgi_pass unix:/var/run/php5-fpm.sock;
         fastcgi_index index.php;
@@ -88,4 +90,3 @@ EOF
 sed --in-place='' \
         --expression 's/^fastcgi_param *HTTPS.*$/fastcgi_param  HTTPS               \$fe_https if_not_empty;/' \
         /etc/nginx/fastcgi_params
-
