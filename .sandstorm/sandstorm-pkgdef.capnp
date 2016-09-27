@@ -24,7 +24,7 @@ const pkgdef :Spk.PackageDefinition = (
     appMarketingVersion = (defaultText = "1.25.2"),
 
     actions = [
-      # Define your "new document" handlers here.
+      # Define your "new document" handlers ere.
       ( title = (defaultText = "New MediaWiki"),
         nounPhrase = (defaultText = "wiki"),
         command = .myCommand
@@ -61,6 +61,8 @@ const pkgdef :Spk.PackageDefinition = (
       pgpKeyring = embed "pgp-keyring",
 
       description = (defaultText = embed "description.md"),
+      shortDescription = (defaultText = "Wiki"),
+
       changeLog = (defaultText = embed "../mediawiki-core/HISTORY"),
 
       screenshots = [
