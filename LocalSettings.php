@@ -240,3 +240,6 @@ $wgMaxUploadSize = 100 * 1024 * 1024;
  * Open external links in new tab *
  */
  $wgExternalLinkTarget = '_blank';
+
+// Load the cite package so the <ref> and <references/> tags work
+wfLoadExtension( 'Cite' );
