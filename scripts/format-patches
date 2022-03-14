@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -exuo pipefail
+here="$(realpath $(dirname $0))"
+. "$here/config.sh"
+cd "$here/../mediawiki"
+
+git format-patch \
+	--output-directory ../patches \
+	$mediawiki_revision

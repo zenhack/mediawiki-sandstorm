@@ -1,4 +1,0 @@
-[submodule "mediawiki-core"]
-	path = mediawiki-core
-	url = git@github.com:jparyani/mediawiki-core.git
-	branch = sandstorm

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -exuo pipefail
+here="$(realpath $(dirname $0))"
+. "$here/config.sh"
+
+# Make `git am` happy when running on a fresh vagrant box with these not
+# set up:
+export GIT_COMMITTER_EMAIL="robot@localhost"
+export GIT_COMMITTER_NAME="robot@localhost"
+
+cd "$here/mediawiki"
+git checkout "$mediawiki_revision"
+git am ../patches/*.patch

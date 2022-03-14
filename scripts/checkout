@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -exuo pipefail
+here="$(realpath $(dirname $0))"
+. "$here/config.sh"
+
+cd "$here/.."
+
+if [ ! -e mediawiki ]; then
+	git clone https://github.com/wikimedia/mediawiki
+	cd mediawiki
+	git checkout "$mediawiki_revision"
+fi
