@@ -107,6 +107,10 @@ $wgUpgradeKey = "1e37be2963f3deaa";
 
 $wgDefaultSkin = "vector";
 
+wfLoadSkin( 'MonoBook' );
+wfLoadSkin( 'Timeless' );
+wfLoadSkin( 'Vector' );
+
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
 ## License and Creative Commons licenses are supported so far.
@@ -247,4 +251,4 @@ $wgMaxUploadSize = 100 * 1024 * 1024;
 // Load the cite package so the <ref> and <references/> tags work
 wfLoadExtension( 'Cite' );
 
-$wgShowExceptionDetails = true;
+#$wgShowExceptionDetails = true;

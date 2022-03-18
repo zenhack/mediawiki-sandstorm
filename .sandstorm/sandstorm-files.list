@@ -1145,6 +1145,11 @@ opt/app/mediawiki/maintenance/sqlite/archives/patch-watchlist-wl_title-varbinary
 opt/app/mediawiki/maintenance/update.php
 opt/app/mediawiki/resources/Resources.php
 opt/app/mediawiki/resources/lib/ooui/i18n/en.json
+opt/app/mediawiki/skins/MonoBook/skin.json
+opt/app/mediawiki/skins/Timeless/skin.json
+opt/app/mediawiki/skins/Vector/includes/Constants.php
+opt/app/mediawiki/skins/Vector/includes/ServiceWiring.php
+opt/app/mediawiki/skins/Vector/skin.json
 opt/app/mediawiki/vendor/autoload.php
 opt/app/mediawiki/vendor/composer.lock
 opt/app/mediawiki/vendor/composer/ClassLoader.php
