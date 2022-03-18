@@ -1,0 +1,27 @@
+From e462a3e71934f8be1925d266d116235e77c096ae Mon Sep 17 00:00:00 2001
+From: Jason Paryani <github@jparyani.com>
+Date: Tue, 5 Aug 2014 00:42:20 -0700
+Subject: [PATCH 3/9] Handle when sandstorm headers are unset
+
+---
+ includes/MediaWiki.php | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/includes/MediaWiki.php b/includes/MediaWiki.php
+index ccf500db1f..21a2004944 100644
+--- a/includes/MediaWiki.php
++++ b/includes/MediaWiki.php
+@@ -226,8 +226,8 @@ class MediaWiki {
+ 		$output = $this->context->getOutput();
+ 		$user = $this->context->getUser();
+ 
+-		$name = $_SERVER[ 'HTTP_X_SANDSTORM_USERNAME'];
+-		$id = $_SERVER[ 'HTTP_X_SANDSTORM_USER_ID'];
++		$name = array_key_exists('HTTP_X_SANDSTORM_USERNAME', $_SERVER) ? $_SERVER[ 'HTTP_X_SANDSTORM_USERNAME'] : 'Public';
++		$id = array_key_exists('HTTP_X_SANDSTORM_USER_ID', $_SERVER) ? $_SERVER[ 'HTTP_X_SANDSTORM_USER_ID'] : '';
+ 
+ 		if ($user->isAnon()) {
+ 			$u = null;
+-- 
+2.35.1
+

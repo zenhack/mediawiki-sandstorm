@@ -1,0 +1,36 @@
+From 94ca62b5bd8594542b78faebca677c1ba74c61aa Mon Sep 17 00:00:00 2001
+From: Jason Paryani <github@jparyani.com>
+Date: Mon, 25 Aug 2014 00:16:44 -0700
+Subject: [PATCH 5/9] Fix up small errors in Wiki.php
+
+---
+ includes/MediaWiki.php | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/includes/MediaWiki.php b/includes/MediaWiki.php
+index 870287a59a..36cfde06d1 100644
+--- a/includes/MediaWiki.php
++++ b/includes/MediaWiki.php
+@@ -231,9 +231,9 @@ class MediaWiki {
+ 		$id = array_key_exists('HTTP_X_SANDSTORM_USER_ID', $_SERVER) ? $_SERVER[ 'HTTP_X_SANDSTORM_USER_ID'] : '';
+ 		$count = 2;
+ 
++		$isNew = false;
+ 		if ($user->isAnon()) {
+ 			$u = null;
+-			$isNew = false;
+ 			do {
+ 				$u = User::newFromName( $name, 'creatable' ); // TODO
+ 				if ( !is_object( $u ) ) {
+@@ -248,7 +248,7 @@ class MediaWiki {
+ 			} while (0 != $u->idForName() && $u->getEmail() !== $id && !empty($id));
+ 
+ 			if ( 0 == $u->idForName() ) {
+-				$permissions = $_SERVER['HTTP_X_SANDSTORM_PERMISSIONS'];
++				$permissions = array_key_exists('HTTP_X_SANDSTORM_PERMISSIONS', $_SERVER) ? $_SERVER[ 'HTTP_X_SANDSTORM_PERMISSIONS'] : '';
+ 				$pass = sha1(mt_rand());
+ 				$u->setRealName( $name );
+ 				$u->setEmail($id);
+-- 
+2.35.1
+

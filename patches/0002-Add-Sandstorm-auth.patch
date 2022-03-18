@@ -1,21 +1,20 @@
-From 40542d20b56e187422cf3de52a4555a5a929cd76 Mon Sep 17 00:00:00 2001
+From 88656e929e76e2c0024424ce6eac97ca18a0b2bb Mon Sep 17 00:00:00 2001
 From: Jason Paryani <github@jparyani.com>
 Date: Tue, 5 Aug 2014 00:05:56 -0700
-Subject: [PATCH 02/13] Add Sandstorm auth
+Subject: [PATCH 2/9] Add Sandstorm auth
 
 ---
- includes/MediaWiki.php | 93 +++++++++++++++++++++++++++++++++++++++++-
- 1 file changed, 92 insertions(+), 1 deletion(-)
+ includes/MediaWiki.php | 92 +++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 91 insertions(+), 1 deletion(-)
 
 diff --git a/includes/MediaWiki.php b/includes/MediaWiki.php
-index ec2f40f626..da1ac58b1b 100644
+index 7fc6ca4848..ccf500db1f 100644
 --- a/includes/MediaWiki.php
 +++ b/includes/MediaWiki.php
-@@ -142,6 +142,34 @@ class MediaWiki {
- 		return $action;
+@@ -179,6 +179,33 @@ class MediaWiki {
+ 		return $this->action;
  	}
  
-+
 +	private function initUser( $u, $pass, $autocreate ) {
 +		global $wgAuth;
 +
@@ -46,7 +45,7 @@ index ec2f40f626..da1ac58b1b 100644
  	/**
  	 * Performs the request.
  	 * - bad titles
-@@ -155,13 +183,76 @@ class MediaWiki {
+@@ -192,13 +219,76 @@ class MediaWiki {
  	 * @return void
  	 */
  	private function performRequest() {
@@ -121,7 +120,7 @@ index ec2f40f626..da1ac58b1b 100644
 +			wfRunHooks( 'UserLoginComplete', array( &$u, &$injected_html ) );
 +		}
 +
- 		if ( $request->getVal( 'printable' ) === 'yes' ) {
+ 		if ( $request->getRawVal( 'printable' ) === 'yes' ) {
  			$output->setPrintable();
  		}
 -- 

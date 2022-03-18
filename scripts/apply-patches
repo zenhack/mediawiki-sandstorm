@@ -8,6 +8,6 @@ here="$(realpath $(dirname $0))"
 export GIT_COMMITTER_EMAIL="robot@localhost"
 export GIT_COMMITTER_NAME="robot@localhost"
 
-cd "$here/mediawiki"
+cd "$here/../mediawiki"
 git checkout "$mediawiki_revision"
 git am ../patches/*.patch

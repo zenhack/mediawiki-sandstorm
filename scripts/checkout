@@ -7,6 +7,6 @@ cd "$here/.."
 
 if [ ! -e mediawiki ]; then
 	git clone https://github.com/wikimedia/mediawiki
-	cd mediawiki
-	git checkout "$mediawiki_revision"
 fi
+cd mediawiki
+git checkout "$mediawiki_revision"

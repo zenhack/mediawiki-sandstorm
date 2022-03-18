@@ -1,7 +1,7 @@
-From acab4a487b38542c95888cf26782192807cdb64a Mon Sep 17 00:00:00 2001
+From 79595960d7662f435b6e1a51d534b7cc50938672 Mon Sep 17 00:00:00 2001
 From: Jason Paryani <github@jparyani.com>
 Date: Fri, 4 Mar 2016 15:19:53 -0800
-Subject: [PATCH 12/13] Increase max upload size to 100MB
+Subject: [PATCH 9/9] Increase max upload size to 100MB
 
 ---
  .user.ini | 5 +++++

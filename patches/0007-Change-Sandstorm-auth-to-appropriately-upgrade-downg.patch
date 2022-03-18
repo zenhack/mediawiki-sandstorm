@@ -1,18 +1,18 @@
-From b47495fc5adae61c25d7d61e06012d3acd148f6c Mon Sep 17 00:00:00 2001
+From cb85591175018c21ab2d96959c3d668fd30c3553 Mon Sep 17 00:00:00 2001
 From: Jason Paryani <github@jparyani.com>
 Date: Fri, 21 Aug 2015 16:34:51 -0700
-Subject: [PATCH 10/13] Change Sandstorm auth to appropriately
- upgrade/downgrade permissions
+Subject: [PATCH 7/9] Change Sandstorm auth to appropriately upgrade/downgrade
+ permissions
 
 ---
  includes/MediaWiki.php | 19 +++++++++++++++++++
  1 file changed, 19 insertions(+)
 
 diff --git a/includes/MediaWiki.php b/includes/MediaWiki.php
-index 6d101a4dee..df6b246e6f 100644
+index eee26457e8..4f7151994a 100644
 --- a/includes/MediaWiki.php
 +++ b/includes/MediaWiki.php
-@@ -234,6 +234,25 @@ class MediaWiki {
+@@ -270,6 +270,25 @@ class MediaWiki {
  					$u->saveSettings();
  				}
  				$isNew = true;

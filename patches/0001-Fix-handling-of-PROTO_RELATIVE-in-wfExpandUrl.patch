@@ -1,17 +1,17 @@
-From cd80841f4cd5145ae18755cf3bab7644ccc89902 Mon Sep 17 00:00:00 2001
+From 17dbf0a5ac96ac4ed5f84642eed2aee022836781 Mon Sep 17 00:00:00 2001
 From: Jason Paryani <github@jparyani.com>
 Date: Tue, 22 Jul 2014 16:36:17 -0700
-Subject: [PATCH 01/13] Fix handling of PROTO_RELATIVE in wfExpandUrl
+Subject: [PATCH 1/9] Fix handling of PROTO_RELATIVE in wfExpandUrl
 
 ---
  includes/GlobalFunctions.php | 4 ++++
  1 file changed, 4 insertions(+)
 
 diff --git a/includes/GlobalFunctions.php b/includes/GlobalFunctions.php
-index 45cd7ea528..2d77d89591 100644
+index ce9268af04..9fff3c1508 100644
 --- a/includes/GlobalFunctions.php
 +++ b/includes/GlobalFunctions.php
-@@ -634,6 +634,10 @@ function wfExpandUrl( $url, $defaultProto = PROTO_CURRENT ) {
+@@ -528,6 +528,10 @@ function wfExpandUrl( $url, $defaultProto = PROTO_CURRENT ) {
  
  	if ( $bits && isset( $bits['path'] ) ) {
  		$bits['path'] = wfRemoveDotSegments( $bits['path'] );
