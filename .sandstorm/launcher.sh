@@ -24,6 +24,10 @@ mkdir -p /var/mediawiki-cache
 # do that now.
 test -e /var/mediawiki-images || cp -r /opt/app/mediawiki-core/images.orig /var/mediawiki-images
 
+# TODO: update the database if necessary. See:
+#
+# https://www.mediawiki.org/wiki/Manual:Upgrading
+
 # Spawn php
 /usr/sbin/php5-fpm --nodaemonize --fpm-config /etc/php5/fpm/php-fpm.conf &
 # Wait until php has bound its socket, indicating readiness
