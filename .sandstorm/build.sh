@@ -3,10 +3,10 @@
 
 set -euo pipefail
 
-cd /opt/app/mediawiki-core
+cd /opt/app/mediawiki
 
-rm -f /opt/app/mediawiki-core/composer.lock
-if [ -f /opt/app/mediawiki-core/composer.json ] ; then
+rm -f /opt/app/mediawiki/composer.lock
+if [ -f /opt/app/mediawiki/composer.json ] ; then
     if [ ! -f composer.phar ] ; then
         curl -sS https://getcomposer.org/installer | php
     fi
