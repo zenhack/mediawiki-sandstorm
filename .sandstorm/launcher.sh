@@ -6,7 +6,7 @@ test -e /var/opt/wiki/wiki.sqlite || cp /opt/app/wiki.sqlite /var/opt/wiki/wiki.
 test -e /var/VERSION || echo "1.23.2" > /var/VERSION
 [[ "$(cat /var/VERSION)" == "${CURRENT_VERSION}" ]] || (cd /opt/app/mediawiki-core && php maintenance/update.php --quick && echo $CURRENT_VERSION > /var/VERSION)
 
-# Create a bunch of folders under the clean /var that php, nginx, and mysql expect to exist
+# Create a bunch of folders under the clean /var that php and nginx expect to exist
 mkdir -p /var/lib/nginx
 mkdir -p /var/lib/php5/sessions
 mkdir -p /var/log
@@ -22,11 +22,11 @@ mkdir -p /var/mediawiki-cache
 
 # If we haven't created /var/mediawiki-images to store user uploads yet,
 # do that now.
-test -e /var/mediawiki-images || cp -r /opt/app/mediawiki-core/images.orig /var/mediawiki-images 
+test -e /var/mediawiki-images || cp -r /opt/app/mediawiki-core/images.orig /var/mediawiki-images
 
-# Spawn mysqld, php
+# Spawn php
 /usr/sbin/php5-fpm --nodaemonize --fpm-config /etc/php5/fpm/php-fpm.conf &
-# Wait until mysql and php have bound their sockets, indicating readiness
+# Wait until php has bound its socket, indicating readiness
 while [ ! -e /var/run/php5-fpm.sock ] ; do
     echo "waiting for php5-fpm to be available at /var/run/php5-fpm.sock"
     sleep .2
