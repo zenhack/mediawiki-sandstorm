@@ -100,7 +100,10 @@ $wgUpgradeKey = "1e37be2963f3deaa";
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, ie 'cologneblue', 'monobook', 'vector':
-require_once "$IP/skins/Vector/Vector.php";
+#
+#(zenhack): this was in Jason's version, but the file doesn't exist. See if it
+#works without it...
+#require_once "$IP/skins/Vector/Vector.php";
 
 $wgDefaultSkin = "vector";
 

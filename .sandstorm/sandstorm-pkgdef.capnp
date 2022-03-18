@@ -63,7 +63,7 @@ const pkgdef :Spk.PackageDefinition = (
       description = (defaultText = embed "description.md"),
       shortDescription = (defaultText = "Wiki"),
 
-      changeLog = (defaultText = embed "../mediawiki-core/HISTORY"),
+      changeLog = (defaultText = embed "../mediawiki/HISTORY"),
 
       screenshots = [
         (width = 448, height = 351, png = embed "sandstorm-screenshot.png")
@@ -77,7 +77,7 @@ const pkgdef :Spk.PackageDefinition = (
     # automatically by running it on a FUSE filesystem. So, the mappings
     # here are only to tell it where to find files that the app wants.
     searchPath = [
-      ( packagePath = "opt/app/mediawiki-core/LocalSettings.php", sourcePath = "/opt/app/LocalSettings.php" ),
+      ( packagePath = "opt/app/mediawiki/LocalSettings.php", sourcePath = "/opt/app/LocalSettings.php" ),
       ( packagePath = "opt/app/.git", sourcePath = "/opt/app/.gitignore" ),
       ( sourcePath = "." ),  # Search this directory first.
       ( sourcePath = "/",    # Then search the system root directory.
