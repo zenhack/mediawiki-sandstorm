@@ -58,7 +58,7 @@ $wgDBuser = "";
 $wgDBpassword = "";
 
 # SQLite-specific settings
-$wgSQLiteDataDir = "/var/opt/wiki";
+$wgSQLiteDataDir = "/var/wiki";
 
 ## Shared memory settings
 $wgMainCacheType = CACHE_ACCEL;
@@ -246,3 +246,5 @@ $wgMaxUploadSize = 100 * 1024 * 1024;
 
 // Load the cite package so the <ref> and <references/> tags work
 wfLoadExtension( 'Cite' );
+
+$wgShowExceptionDetails = true;

@@ -1,9 +1,9 @@
 #!/bin/bash
 
-CURRENT_VERSION="1.25.2"
-mkdir -p /var/opt/wiki
-test -e /var/opt/wiki/wiki.sqlite || cp /opt/app/wiki.sqlite /var/opt/wiki/wiki.sqlite
-test -e /var/VERSION || echo "1.23.2" > /var/VERSION
+CURRENT_VERSION="$(cat /opt/app/.sandstorm/version.txt)"
+mkdir -p /var/wiki
+test -e /var/wiki/wiki.sqlite || cp /opt/app/wiki.sqlite /var/wiki/wiki.sqlite
+test -e /var/VERSION || echo "1.37.1" > /var/VERSION
 [[ "$(cat /var/VERSION)" == "${CURRENT_VERSION}" ]] || (cd /opt/app/mediawiki && php maintenance/update.php --quick && echo $CURRENT_VERSION > /var/VERSION)
 
 # Create a bunch of folders under the clean /var that php and nginx expect to exist
