@@ -681,9 +681,6 @@ opt/app/mediawiki/extensions/WikiEditor/modules/templates/dialogInsertReference.
 opt/app/mediawiki/extensions/WikiEditor/modules/templates/dialogInsertTable.html
 opt/app/mediawiki/extensions/WikiEditor/modules/templates/dialogReplace.html
 opt/app/mediawiki/images
-opt/app/mediawiki/images.orig
-opt/app/mediawiki/images.orig/.htaccess
-opt/app/mediawiki/images.orig/README
 opt/app/mediawiki/includes/ActorMigration.php
 opt/app/mediawiki/includes/ActorMigrationBase.php
 opt/app/mediawiki/includes/AutoLoader.php
