@@ -9,7 +9,7 @@ const pkgdef :Spk.PackageDefinition = (
   # The package definition. Note that the spk tool looks specifically for the
   # "pkgdef" constant.
 
-  id = "y88wavuqwz0p3tjcqtdt8egauq9hpnzr1s9efq1d63rwtj1w0ech",
+  id = "p04q48xd2kgkystkrda5n77kdns6u569wnactgh904tf7s3vev70",
   # Your app ID is actually its public key. The private key was placed in
   # your keyring. All updates must be signed with the same key.
 
@@ -19,7 +19,7 @@ const pkgdef :Spk.PackageDefinition = (
 
     appTitle = (defaultText = "MediaWiki"),
 
-    appVersion = 6,  # Increment this for every release.
+    appVersion = 0,  # Increment this for every release.
 
     appMarketingVersion = (defaultText = embed "version.txt"),
 
