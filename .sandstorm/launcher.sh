@@ -1,16 +1,12 @@
 #!/bin/bash
 
 CURRENT_VERSION="$(cat /opt/app/.sandstorm/version.txt)"
-mkdir -p /var/wiki
-test -e /var/wiki/wiki.sqlite || cp /opt/app/wiki.sqlite /var/wiki/wiki.sqlite
-test -e /var/VERSION || echo "1.37.1" > /var/VERSION
+if [ ! -e /var/VERSION ]; then
+	cp -r /opt/app/init-var/* /var/
+fi
+
 [[ "$(cat /var/VERSION)" == "${CURRENT_VERSION}" ]] || (cd /opt/app/mediawiki && php maintenance/update.php --quick && echo $CURRENT_VERSION > /var/VERSION)
 
-# Create a bunch of folders under the clean /var that php and nginx expect to exist
-mkdir -p /var/lib/nginx
-mkdir -p /var/lib/php/sessions
-mkdir -p /var/log
-mkdir -p /var/log/nginx
 # Wipe /var/run, since pidfiles and socket files from previous launches should go away
 # TODO someday: I'd prefer a tmpfs for these.
 rm -rf /var/run
@@ -23,10 +19,6 @@ mkdir -p /var/mediawiki-cache
 # If we haven't created /var/mediawiki-images to store user uploads yet,
 # do that now.
 test -e /var/mediawiki-images || cp -r /opt/app/mediawiki/images.orig /var/mediawiki-images
-
-# TODO: update the database if necessary. See:
-#
-# https://www.mediawiki.org/wiki/Manual:Upgrading
 
 # Spawn php
 /usr/sbin/php-fpm7.3 --nodaemonize --fpm-config /etc/php/7.3/fpm/php-fpm.conf &
