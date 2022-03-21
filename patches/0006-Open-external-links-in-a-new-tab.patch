@@ -1,4 +1,4 @@
-From fccdd567bc0461a6ff78b1d2549aaed97ac65fbc Mon Sep 17 00:00:00 2001
+From 0a4597d65d72cba92f1af200b60a4355e33f7da5 Mon Sep 17 00:00:00 2001
 From: Ian Denhardt <ian@zenhack.net>
 Date: Mon, 21 Mar 2022 01:14:37 -0400
 Subject: [PATCH 6/6] Open external links in a new tab.

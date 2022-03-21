@@ -1,27 +1,25 @@
-From d2c22bf1e4fde628b84605b3abb4c704b406ab4e Mon Sep 17 00:00:00 2001
+From 16464237894af25603a13210b54b9cf5840dffa8 Mon Sep 17 00:00:00 2001
 From: Ian Denhardt <ian@zenhack.net>
 Date: Sun, 20 Mar 2022 22:07:53 -0400
 Subject: [PATCH 5/6] Set the URL bar using postMessage
 
 ---
- resources/src/startup/startup.js | 7 +++++++
- 1 file changed, 7 insertions(+)
+ resources/src/startup/startup.js | 5 +++++
+ 1 file changed, 5 insertions(+)
 
 diff --git a/resources/src/startup/startup.js b/resources/src/startup/startup.js
-index da4ea680cc..af6dc16b21 100644
+index da4ea680cc..c97c3499ee 100644
 --- a/resources/src/startup/startup.js
 +++ b/resources/src/startup/startup.js
-@@ -164,3 +164,10 @@ if ( !isCompatible( navigator.userAgent ) ) {
+@@ -164,3 +164,8 @@ if ( !isCompatible( navigator.userAgent ) ) {
  		};
  	}() );
  }
 +
 +// SANDSTORM: update the url bar outside the iframe:
-+(function() {
-+  window.parent.postMessage({
-+    setPath: location.pathname + location.search,
-+  }, '*');
-+})();
++window.parent.postMessage({
++  setPath: location.pathname + location.search,
++}, '*');
 -- 
 2.35.1
 
