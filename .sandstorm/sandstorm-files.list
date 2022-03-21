@@ -285,6 +285,7 @@ opt/app/mediawiki/extensions/CiteThisPage/CiteThisPage.alias.php
 opt/app/mediawiki/extensions/CiteThisPage/extension.json
 opt/app/mediawiki/extensions/CiteThisPage/i18n/en.json
 opt/app/mediawiki/extensions/CiteThisPage/includes/Hooks.php
+opt/app/mediawiki/extensions/CiteThisPage/includes/SpecialCiteThisPage.php
 opt/app/mediawiki/extensions/CiteThisPage/modules/ext.citeThisPage.css
 opt/app/mediawiki/extensions/CodeEditor
 opt/app/mediawiki/extensions/CodeEditor/.git
@@ -707,6 +708,7 @@ opt/app/mediawiki/includes/EditPage.php
 opt/app/mediawiki/includes/ExtensionInfo.php
 opt/app/mediawiki/includes/FauxRequest.php
 opt/app/mediawiki/includes/FauxResponse.php
+opt/app/mediawiki/includes/FormOptions.php
 opt/app/mediawiki/includes/GitInfo.php
 opt/app/mediawiki/includes/GlobalFunctions.php
 opt/app/mediawiki/includes/HeaderCallback.php
@@ -839,6 +841,7 @@ opt/app/mediawiki/includes/Message/TextFormatter.php
 opt/app/mediawiki/includes/NoLocalSettings.php
 opt/app/mediawiki/includes/OutputPage.php
 opt/app/mediawiki/includes/PHPVersionCheck.php
+opt/app/mediawiki/includes/PageProps.php
 opt/app/mediawiki/includes/ParamValidator/TypeDef/NamespaceDef.php
 opt/app/mediawiki/includes/ParamValidator/TypeDef/UserDef.php
 opt/app/mediawiki/includes/PathRouter.php
@@ -917,6 +920,8 @@ opt/app/mediawiki/includes/StubUserLang.php
 opt/app/mediawiki/includes/TemplateParser.php
 opt/app/mediawiki/includes/TemplatesOnThisPageFormatter.php
 opt/app/mediawiki/includes/Title.php
+opt/app/mediawiki/includes/TitleArray.php
+opt/app/mediawiki/includes/TitleArrayFromResult.php
 opt/app/mediawiki/includes/TitleFactory.php
 opt/app/mediawiki/includes/WebRequest.php
 opt/app/mediawiki/includes/WebResponse.php
@@ -958,10 +963,13 @@ opt/app/mediawiki/includes/api/ApiFormatJson.php
 opt/app/mediawiki/includes/api/ApiHookRunner.php
 opt/app/mediawiki/includes/api/ApiMain.php
 opt/app/mediawiki/includes/api/ApiModuleManager.php
+opt/app/mediawiki/includes/api/ApiOpenSearch.php
+opt/app/mediawiki/includes/api/ApiOpenSearchFormatJson.php
 opt/app/mediawiki/includes/api/ApiPageSet.php
 opt/app/mediawiki/includes/api/ApiQuery.php
 opt/app/mediawiki/includes/api/ApiQueryBase.php
 opt/app/mediawiki/includes/api/ApiQueryBlockInfoTrait.php
+opt/app/mediawiki/includes/api/ApiQueryPageProps.php
 opt/app/mediawiki/includes/api/ApiQueryTokens.php
 opt/app/mediawiki/includes/api/ApiQueryUsers.php
 opt/app/mediawiki/includes/api/ApiResult.php
@@ -997,6 +1005,7 @@ opt/app/mediawiki/includes/api/Hook/ApiQuery__moduleManagerHook.php
 opt/app/mediawiki/includes/api/Hook/ApiRsdServiceApisHook.php
 opt/app/mediawiki/includes/api/Hook/ApiValidatePasswordHook.php
 opt/app/mediawiki/includes/api/Hook/RequestHasSameOriginSecurityHook.php
+opt/app/mediawiki/includes/api/SearchApi.php
 opt/app/mediawiki/includes/api/Validator/ApiParamValidator.php
 opt/app/mediawiki/includes/api/Validator/ApiParamValidatorCallbacks.php
 opt/app/mediawiki/includes/api/Validator/SubmoduleDef.php
@@ -1072,6 +1081,13 @@ opt/app/mediawiki/includes/cache/localisation/LCStoreDB.php
 opt/app/mediawiki/includes/cache/localisation/LCStoreNull.php
 opt/app/mediawiki/includes/cache/localisation/LocalisationCache.php
 opt/app/mediawiki/includes/changes/ChangesList.php
+opt/app/mediawiki/includes/changes/ChangesListBooleanFilter.php
+opt/app/mediawiki/includes/changes/ChangesListBooleanFilterGroup.php
+opt/app/mediawiki/includes/changes/ChangesListFilter.php
+opt/app/mediawiki/includes/changes/ChangesListFilterGroup.php
+opt/app/mediawiki/includes/changes/ChangesListStringOptionsFilter.php
+opt/app/mediawiki/includes/changes/ChangesListStringOptionsFilterGroup.php
+opt/app/mediawiki/includes/changes/EnhancedChangesList.php
 opt/app/mediawiki/includes/changes/Hook/AbortEmailNotificationHook.php
 opt/app/mediawiki/includes/changes/Hook/ChangesListInitRowsHook.php
 opt/app/mediawiki/includes/changes/Hook/ChangesListInsertArticleLinkHook.php
@@ -1083,6 +1099,7 @@ opt/app/mediawiki/includes/changes/Hook/MarkPatrolledCompleteHook.php
 opt/app/mediawiki/includes/changes/Hook/MarkPatrolledHook.php
 opt/app/mediawiki/includes/changes/Hook/OldChangesListRecentChangesLineHook.php
 opt/app/mediawiki/includes/changes/Hook/RecentChange_saveHook.php
+opt/app/mediawiki/includes/changes/RCCacheEntryFactory.php
 opt/app/mediawiki/includes/changes/RecentChange.php
 opt/app/mediawiki/includes/changetags/ChangeTags.php
 opt/app/mediawiki/includes/changetags/Hook/ChangeTagAfterDeleteHook.php
@@ -1228,6 +1245,7 @@ opt/app/mediawiki/includes/htmlform/fields/HTMLInfoField.php
 opt/app/mediawiki/includes/htmlform/fields/HTMLSubmitField.php
 opt/app/mediawiki/includes/htmlform/fields/HTMLTagFilter.php
 opt/app/mediawiki/includes/htmlform/fields/HTMLTextField.php
+opt/app/mediawiki/includes/htmlform/fields/HTMLTitleTextField.php
 opt/app/mediawiki/includes/http/GuzzleHttpRequest.php
 opt/app/mediawiki/includes/http/Http.php
 opt/app/mediawiki/includes/http/HttpRequestFactory.php
@@ -1322,6 +1340,7 @@ opt/app/mediawiki/includes/libs/ParamValidator/TypeDef.php
 opt/app/mediawiki/includes/libs/ParamValidator/TypeDef/EnumDef.php
 opt/app/mediawiki/includes/libs/ParamValidator/TypeDef/ExpiryDef.php
 opt/app/mediawiki/includes/libs/ParamValidator/TypeDef/IntegerDef.php
+opt/app/mediawiki/includes/libs/ParamValidator/TypeDef/LimitDef.php
 opt/app/mediawiki/includes/libs/ParamValidator/TypeDef/NumericDef.php
 opt/app/mediawiki/includes/libs/ParamValidator/TypeDef/PresenceBooleanDef.php
 opt/app/mediawiki/includes/libs/ParamValidator/TypeDef/StringDef.php
@@ -1629,6 +1648,15 @@ opt/app/mediawiki/includes/search/Hook/ShowSearchHitHook.php
 opt/app/mediawiki/includes/search/Hook/ShowSearchHitTitleHook.php
 opt/app/mediawiki/includes/search/Hook/SpecialSearchPowerBoxHook.php
 opt/app/mediawiki/includes/search/Hook/SpecialSearchProfileFormHook.php
+opt/app/mediawiki/includes/search/PrefixSearch.php
+opt/app/mediawiki/includes/search/SearchDatabase.php
+opt/app/mediawiki/includes/search/SearchEngine.php
+opt/app/mediawiki/includes/search/SearchEngineConfig.php
+opt/app/mediawiki/includes/search/SearchEngineFactory.php
+opt/app/mediawiki/includes/search/SearchExactMatchRescorer.php
+opt/app/mediawiki/includes/search/SearchSqlite.php
+opt/app/mediawiki/includes/search/SearchSuggestionSet.php
+opt/app/mediawiki/includes/search/TitlePrefixSearch.php
 opt/app/mediawiki/includes/session/BotPasswordSessionProvider.php
 opt/app/mediawiki/includes/session/CookieSessionProvider.php
 opt/app/mediawiki/includes/session/CsrfTokenSetProvider.php
@@ -1681,6 +1709,7 @@ opt/app/mediawiki/includes/skins/SkinMustache.php
 opt/app/mediawiki/includes/skins/SkinTemplate.php
 opt/app/mediawiki/includes/specialpage/AuthManagerSpecialPage.php
 opt/app/mediawiki/includes/specialpage/ChangesListSpecialPage.php
+opt/app/mediawiki/includes/specialpage/FormSpecialPage.php
 opt/app/mediawiki/includes/specialpage/Hook/AuthChangeFormFieldsHook.php
 opt/app/mediawiki/includes/specialpage/Hook/ChangeAuthenticationDataAuditHook.php
 opt/app/mediawiki/includes/specialpage/Hook/ChangesListSpecialPageQueryHook.php
@@ -1779,6 +1808,8 @@ opt/app/mediawiki/includes/specials/Hook/WatchlistEditorBeforeFormRenderHook.php
 opt/app/mediawiki/includes/specials/Hook/WatchlistEditorBuildRemoveLineHook.php
 opt/app/mediawiki/includes/specials/Hook/WhatLinksHerePropsHook.php
 opt/app/mediawiki/includes/specials/SpecialCreateAccount.php
+opt/app/mediawiki/includes/specials/SpecialRandomPage.php
+opt/app/mediawiki/includes/specials/SpecialRecentChanges.php
 opt/app/mediawiki/includes/specials/SpecialUserLogin.php
 opt/app/mediawiki/includes/specials/SpecialUserrights.php
 opt/app/mediawiki/includes/specials/SpecialVersion.php
