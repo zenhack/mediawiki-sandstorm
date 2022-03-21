@@ -42,7 +42,7 @@ $wgLogos = [ '1x' => "$wgResourceBasePath/resources/assets/wiki.png" ];
 ## UPO means: this is also a user preference option
 
 $wgEnableEmail = false;
-$wgEnableUserEmail = true; # UPO
+$wgEnableUserEmail = false; # UPO
 
 $wgEmergencyContact = "apache@🌻.invalid";
 $wgPasswordSender = "apache@🌻.invalid";
