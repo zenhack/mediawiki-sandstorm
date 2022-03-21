@@ -10,3 +10,5 @@ if [ ! -e mediawiki ]; then
 fi
 cd mediawiki
 git checkout "$mediawiki_revision"
+git submodule init
+git submodule update
