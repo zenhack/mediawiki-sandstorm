@@ -43,12 +43,12 @@ const pkgdef :Spk.PackageDefinition = (
       ),
 
       website = "https://www.mediawiki.org",
-      codeUrl = "https://github.com/jparyani/mediawiki-sandstorm",
+      codeUrl = "https://github.com/zenhack/mediawiki-sandstorm",
       license = (openSource = gpl2),
       categories = [productivity],
 
       author = (
-        contactEmail = "jparyani@sandstorm.io",
+        contactEmail = "ian@zenhack.net",
         pgpSignature = embed "pgp-signature",
         upstreamAuthor = "MediaWiki Contributors",
       ),
