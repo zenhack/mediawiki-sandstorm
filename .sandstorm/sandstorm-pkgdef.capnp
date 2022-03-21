@@ -72,15 +72,19 @@ const pkgdef :Spk.PackageDefinition = (
     # here are only to tell it where to find files that the app wants.
     searchPath = [
       ( packagePath = "opt/app/mediawiki/LocalSettings.php", sourcePath = "/opt/app/LocalSettings.php" ),
-      ( packagePath = "opt/app/.git", sourcePath = "/opt/app/.gitignore" ),
       ( sourcePath = "." ),  # Search this directory first.
       ( sourcePath = "/",    # Then search the system root directory.
-        hidePaths = [ "home", "proc", "sys",
-                      "etc/passwd", "etc/hosts", "etc/host.conf",
-                      "etc/nsswitch.conf", "etc/resolv.conf" ]
+        hidePaths = [
         # You probably don't want the app pulling files from these places,
         # so we hide them. Note that /dev, /var, and /tmp are implicitly
         # hidden because Sandstorm itself provides them.
+        "home", "proc", "sys",
+        "etc/passwd", "etc/hosts", "etc/host.conf",
+        "etc/nsswitch.conf", "etc/resolv.conf",
+
+        # Mediawiki's history is quite large; avoid pulling it in.
+        "opt/app/mediawiki/.git",
+        ]
       )
     ]
   ),
