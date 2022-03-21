@@ -181,6 +181,8 @@ wfLoadExtension( 'WikiEditor' );
 # End of automatically generated settings.
 # Add more configuration options below.
 
+# For some reason, this causes everything to 404:
+#$wgUsePathInfo = true;
 
 # Don't try to break out of the iframe. wgBreakFrames is false by default,
 # but the one for edit pages is true.
