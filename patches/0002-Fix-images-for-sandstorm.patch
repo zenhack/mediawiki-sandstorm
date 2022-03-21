@@ -1,7 +1,7 @@
 From afd99ce4cf9146b7acbd57a555392267397a9743 Mon Sep 17 00:00:00 2001
 From: Jason Paryani <github@jparyani.com>
 Date: Fri, 4 Mar 2016 14:57:27 -0800
-Subject: [PATCH 2/3] Fix images for sandstorm
+Subject: [PATCH 2/4] Fix images for sandstorm
 
 ---
  images                            | 1 +

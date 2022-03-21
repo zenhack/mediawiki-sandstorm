@@ -1,0 +1,47 @@
+From 33514e9bb44bb0a28c9ac930f959547fbbfb80e9 Mon Sep 17 00:00:00 2001
+From: Ian Denhardt <ian@zenhack.net>
+Date: Sun, 20 Mar 2022 21:59:11 -0400
+Subject: [PATCH 4/4] Remove logout/login/createAccount buttons
+
+Sandstorm wants to handle auth itself, so we should hide these. We still need
+to separately actually wire up auth.
+---
+ includes/skins/SkinTemplate.php | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/includes/skins/SkinTemplate.php b/includes/skins/SkinTemplate.php
+index 5f9640d99b..d8a8a2e2b5 100644
+--- a/includes/skins/SkinTemplate.php
++++ b/includes/skins/SkinTemplate.php
+@@ -595,10 +595,12 @@ class SkinTemplate extends Skin {
+ 				'icon' => 'userContributions'
+ 			];
+ 
++			/* SANDSTORM: hide this, we're handling auth ourselves.
+ 			// if we can't set the user, we can't unset it either
+ 			if ( $request->getSession()->canSetUser() ) {
+ 				$personal_urls['logout'] = $this->buildLogoutLinkData();
+ 			}
++			 */
+ 		} else {
+ 			$useCombinedLoginLink = $this->useCombinedLoginLink();
+ 			$login_url = $this->buildLoginData( $returnto, $useCombinedLoginLink );
+@@ -635,6 +637,7 @@ class SkinTemplate extends Skin {
+ 				];
+ 			}
+ 
++			/* SANDSTORM: hide this, we're handling auth ourselves.
+ 			if (
+ 				$authManager->canCreateAccounts()
+ 				&& $this->getAuthority()->isAllowed( 'createaccount' )
+@@ -650,6 +653,7 @@ class SkinTemplate extends Skin {
+ 					: 'login-private';
+ 				$personal_urls[$key] = $login_url;
+ 			}
++			 */
+ 		}
+ 
+ 		$this->getHookRunner()->onPersonalUrls( $personal_urls, $title, $this );
+-- 
+2.35.1
+
