@@ -37,15 +37,9 @@ const pkgdef :Spk.PackageDefinition = (
 
     metadata = (
       icons = (
-        appGrid = (png = (
-          dpi1x = embed "app-graphics/mediawiki-128.png",
-          dpi2x = embed "app-graphics/mediawiki-256.png"
-        )),
-        grain = (svg = ( embed "app-graphics/mediawiki-24.svg")),
-        market = (png = (
-          dpi1x = embed "app-graphics/mediawiki-150.png",
-          dpi2x = embed "app-graphics/mediawiki-300.png"
-        )),
+        appGrid = .mediawikiLogo,
+        grain = .mediawikiLogo,
+        market = .mediawikiLogo,
       ),
 
       website = "https://www.mediawiki.org",
@@ -119,6 +113,8 @@ const pkgdef :Spk.PackageDefinition = (
     )
   ),
 );
+
+const mediawikiLogo :Spk.Metadata.Icon = (svg = ( embed "app-graphics/mediawiki.svg"));
 
 const myCommand :Spk.Manifest.Command = (
   # Here we define the command used to start up your server.
