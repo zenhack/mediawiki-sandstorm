@@ -1,7 +1,7 @@
 From 17dbf0a5ac96ac4ed5f84642eed2aee022836781 Mon Sep 17 00:00:00 2001
 From: Jason Paryani <github@jparyani.com>
 Date: Tue, 22 Jul 2014 16:36:17 -0700
-Subject: [PATCH 1/4] Fix handling of PROTO_RELATIVE in wfExpandUrl
+Subject: [PATCH 1/5] Fix handling of PROTO_RELATIVE in wfExpandUrl
 
 ---
  includes/GlobalFunctions.php | 4 ++++
