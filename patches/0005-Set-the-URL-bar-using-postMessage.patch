@@ -1,7 +1,7 @@
-From 89196228ea48042b583475930030cba4aae91e3f Mon Sep 17 00:00:00 2001
+From d2c22bf1e4fde628b84605b3abb4c704b406ab4e Mon Sep 17 00:00:00 2001
 From: Ian Denhardt <ian@zenhack.net>
 Date: Sun, 20 Mar 2022 22:07:53 -0400
-Subject: [PATCH 5/5] Set the URL bar using postMessage
+Subject: [PATCH 5/6] Set the URL bar using postMessage
 
 ---
  resources/src/startup/startup.js | 7 +++++++

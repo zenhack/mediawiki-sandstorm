@@ -1,0 +1,24 @@
+From fccdd567bc0461a6ff78b1d2549aaed97ac65fbc Mon Sep 17 00:00:00 2001
+From: Ian Denhardt <ian@zenhack.net>
+Date: Mon, 21 Mar 2022 01:14:37 -0400
+Subject: [PATCH 6/6] Open external links in a new tab.
+
+---
+ includes/Linker.php | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/includes/Linker.php b/includes/Linker.php
+index 8ebbd1c19e..92a3648101 100644
+--- a/includes/Linker.php
++++ b/includes/Linker.php
+@@ -1012,6 +1012,7 @@ class Linker {
+ 		$linktype = '', $attribs = [], $title = null
+ 	) {
+ 		global $wgTitle;
++		$attribs['target'] = '_blank'; // SANDSTORM: open external links in a new tab.
+ 		$class = "external";
+ 		if ( $linktype ) {
+ 			$class .= " $linktype";
+-- 
+2.35.1
+
