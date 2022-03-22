@@ -11,9 +11,6 @@
 	"requires": {
 		"MediaWiki": ">= 1.37.1"
 	},
-  "Hooks": {
-    "LoadExtensionSchemaUpdates": "SandstormAuthHooks::onLoadExtensionSchemaUpdates"
-  },
   "SessionProviders": {
     "SandstormSessionProvider": {
       "class": "SandstormSessionProvider",
@@ -21,8 +18,7 @@
     }
   },
 	"AutoloadClasses": {
-    "SandstormSessionProvider": "includes/SandstormSessionProvider.php",
-    "SandstormAuthHooks": "includes/SandstormAuthHooks.php"
+    "SandstormSessionProvider": "includes/SandstormSessionProvider.php"
   },
 	"manifest_version": 2
 }
