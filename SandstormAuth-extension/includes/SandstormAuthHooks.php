@@ -2,7 +2,7 @@
 
 
 class SandstormAuthHooks {
-	public static function onLoadExtensionShemaUpdates(DatabaseUpdater $updater) {
+	public static function onLoadExtensionSchemaUpdates(DatabaseUpdater $updater) {
 		$updater->getDB()->query(
 			"CREATE TABLE IF NOT EXISTS sandsorm_users " .
 			"    ( user_id VARCHAR PRIMARY KEY" .
