@@ -176,6 +176,8 @@ wfLoadExtension( 'CodeEditor' );
 wfLoadExtension( 'VisualEditor' );
 wfLoadExtension( 'WikiEditor' );
 
+wfLoadExtension( 'SandstormAuth' );
+
 
 # End of automatically generated settings.
 # Add more configuration options below.
@@ -187,3 +189,6 @@ wfLoadExtension( 'WikiEditor' );
 # but the one for edit pages is true.
 $wgBreakFrames = false;
 $wgEditPageFrameOptions = false;
+
+# Uncomment this for stack traces in the browser, useful for debugging:
+#$wgShowExceptionDetails = true;

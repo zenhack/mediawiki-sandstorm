@@ -1,0 +1,28 @@
+{
+  "name": "SandstormAuth",
+  "version": "0.1",
+  "author": [
+    "Ian Denhardt",
+    "Jason Paryani"
+  ],
+  "url": "https://github.com/zenhack/mediawiki-sandstorm",
+  "description": "Provides integration with Sandstorm's authentication system",
+	"license-name": "MIT",
+	"requires": {
+		"MediaWiki": ">= 1.37.1"
+	},
+  "Hooks": {
+    "LoadExtensionSchemaUpdates": "SandstormAuthHooks::onLoadExtensionSchemaUpdaes"
+  },
+  "SessionProviders": {
+    "SandstormSessionProvider": {
+      "class": "SandstormSessionProvider",
+      "args": []
+    }
+  },
+	"AutoloadClasses": {
+    "SandstormSessionProvider": "includes/SandstormSessionProvider.php",
+    "SandstormAuthHooks": "includes/SandstormAuthHooks.php"
+  },
+	"manifest_version": 2
+}

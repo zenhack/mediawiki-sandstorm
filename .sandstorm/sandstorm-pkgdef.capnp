@@ -71,7 +71,14 @@ const pkgdef :Spk.PackageDefinition = (
     # automatically by running it on a FUSE filesystem. So, the mappings
     # here are only to tell it where to find files that the app wants.
     searchPath = [
-      ( packagePath = "opt/app/mediawiki/LocalSettings.php", sourcePath = "/opt/app/LocalSettings.php" ),
+      (
+        packagePath = "opt/app/mediawiki/LocalSettings.php",
+        sourcePath = "/opt/app/LocalSettings.php",
+      ),
+      (
+        packagePath = "opt/app/mediawiki/extensions/SandstormAuth",
+        sourcePath = "/opt/app/SandstormAuth-extension",
+      ),
       ( sourcePath = "." ),  # Search this directory first.
       ( sourcePath = "/",    # Then search the system root directory.
         hidePaths = [
