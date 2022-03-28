@@ -1,5 +1,10 @@
 #!/bin/bash
 
+/opt/app/localhost-proxy/localhost-proxy &
+export http_proxy="http://127.0.0.1:6000"
+export https_proxy="http://127.0.0.1:6000"
+export no_proxy="localhost,127.0.0.1"
+
 CURRENT_VERSION="$(cat /opt/app/.sandstorm/version.txt)"
 if [ ! -e /var/VERSION ]; then
 	cp -r /opt/app/init-var/* /var/

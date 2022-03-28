@@ -5,6 +5,16 @@
 
 set -euo pipefail
 
+# We include a small proxy server written in Go; get a recent toolchain,
+# rather than the one in debian which is typically ancient:
+go_version=1.18
+go_os=linux
+go_arch=amd64
+curl -L https://golang.org/dl/go${go_version}.${go_os}-${go_arch}.tar.gz -o go.tar.gz
+tar -C /usr/local -xzf go.tar.gz
+rm go.tar.gz
+echo 'export PATH=/usr/local/go/bin:$PATH' > /etc/profile.d/go.sh
+
 export DEBIAN_FRONTEND=noninteractive
 
 apt-get update

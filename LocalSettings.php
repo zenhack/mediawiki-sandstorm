@@ -179,8 +179,8 @@ wfLoadExtension( 'SandstormAuth' );
 # End of automatically generated settings.
 # Add more configuration options below.
 
-$wgVirtualRestConfig['modules']['parsoid'] = [
-	'url' => 'http://127.0.0.1:8000/rest.php',
+$wgVirtualRestConfig['global'] = [
+	'HTTPProxy' => 'http://127.0.0.1:6000'
 ];
 
 # For some reason, this causes everything to 404:
