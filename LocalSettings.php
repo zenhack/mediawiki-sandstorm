@@ -137,8 +137,7 @@ $wgLocaltimezone = "UTC";
 ## be publicly accessible from the web.
 #$wgCacheDirectory = "$IP/cache";
 
-# TODO/FIXME: generate this on first run.
-$wgSecretKey = "a7beab0ebed4120434fcc5df460c9e8bddd640ad56ae6f8c8cceab0b7aeacbe3";
+require_once('/var/wgSecretKey.php');
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";

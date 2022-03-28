@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ ! -e /var/wgSecretKey.php ]; then
+	key="$(dd if=/dev/urandom bs=1 count=32 | base64)"
+	echo '<?php $wgSecretKey = "'"$key"'";' > /var/wgSecretKey.php
+fi
+
 /opt/app/localhost-proxy/localhost-proxy &
 export http_proxy="http://127.0.0.1:6000"
 export https_proxy="http://127.0.0.1:6000"
