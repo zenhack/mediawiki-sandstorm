@@ -169,7 +169,6 @@ wfLoadSkin( 'Vector' );
 # to LocalSettings.php. Check specific extension documentation for more details.
 # The following extensions were automatically enabled:
 wfLoadExtension( 'CodeEditor' );
-wfLoadExtension( 'VisualEditor' );
 wfLoadExtension( 'WikiEditor' );
 
 wfLoadExtension( 'SandstormAuth' );
@@ -177,10 +176,6 @@ wfLoadExtension( 'SandstormAuth' );
 
 # End of automatically generated settings.
 # Add more configuration options below.
-
-$wgVirtualRestConfig['modules']['parsoid'] = [
-	'url' => 'http://127.0.0.1:8000/rest.php',
-];
 
 # For some reason, this causes everything to 404:
 #$wgUsePathInfo = true;

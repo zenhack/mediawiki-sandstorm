@@ -219,6 +219,8 @@ opt/app/mediawiki/extensions/PdfHandler/extension.json
 opt/app/mediawiki/extensions/Poem/extension.json
 opt/app/mediawiki/extensions/Renameuser/extension.json
 opt/app/mediawiki/extensions/ReplaceText/extension.json
+opt/app/mediawiki/extensions/SandstormAuth/extension.json
+opt/app/mediawiki/extensions/SandstormAuth/includes/SandstormSessionProvider.php
 opt/app/mediawiki/extensions/Scribunto/extension.json
 opt/app/mediawiki/extensions/SecureLinkFixer/extension.json
 opt/app/mediawiki/extensions/SpamBlacklist/extension.json
@@ -1976,12 +1978,14 @@ opt/app/mediawiki/includes/user/UserNameUtils.php
 opt/app/mediawiki/includes/user/UserOptionsLookup.php
 opt/app/mediawiki/includes/user/UserOptionsManager.php
 opt/app/mediawiki/includes/user/UserRigorOptions.php
+opt/app/mediawiki/includes/user/UserSelectQueryBuilder.php
 opt/app/mediawiki/includes/user/UserTimeCorrection.php
 opt/app/mediawiki/includes/utils/ExecutableFinder.php
 opt/app/mediawiki/includes/utils/FileContentsHasher.php
 opt/app/mediawiki/includes/utils/MWCryptRand.php
 opt/app/mediawiki/includes/watcheditem/Hook/BeforeResetNotificationTimestampHook.php
 opt/app/mediawiki/includes/watcheditem/Hook/WatchedItemQueryServiceExtensionsHook.php
+opt/app/mediawiki/includes/watcheditem/WatchedItem.php
 opt/app/mediawiki/includes/watcheditem/WatchedItemStore.php
 opt/app/mediawiki/includes/watcheditem/WatchedItemStoreInterface.php
 opt/app/mediawiki/includes/watchlist/WatchlistManager.php
@@ -3298,10 +3302,12 @@ proc/cpuinfo
 sandstorm-http-bridge
 sandstorm-http-bridge-config
 sandstorm-manifest
+usr/bin/base64
 usr/bin/bash
 usr/bin/cat
 usr/bin/cp
 usr/bin/dash
+usr/bin/dd
 usr/bin/diff
 usr/bin/diff3
 usr/bin/git
