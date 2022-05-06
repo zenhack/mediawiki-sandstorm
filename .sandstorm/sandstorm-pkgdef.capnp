@@ -113,13 +113,18 @@ const pkgdef :Spk.PackageDefinition = (
 
   bridgeConfig = (
     viewInfo = (
-      permissions = [(name = "admin")],
+      permissions = [
+          # N.B. the way the auth plugin works, the permission names
+          # should each match a group defined in $wgGroupPermissions
+          # in LocalSettings.php.
+          (name = "sysop"),
+        ],
       roles = [(title = (defaultText = "admin"),
-                permissions = [true,],
+                permissions = [true],
                 verbPhrase = (defaultText = "can administer wiki")),
-               (title = (defaultText = "viewer"),
+               (title = (defaultText = "editor"),
                 permissions = [false],
-                verbPhrase = (defaultText = "can view any article"),
+                verbPhrase = (defaultText = "can view or edit any article"),
                 default = true)],
     )
   ),

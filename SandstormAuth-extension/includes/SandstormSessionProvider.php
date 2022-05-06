@@ -61,10 +61,10 @@ class SandstormSessionProvider extends SessionProvider {
 			$old_permissions = $row['permissions'];
 			$res->free();
 			if($permissions !== $old_permissions) {
-				$db->update(
-					'sandstorm_user',
-					['permissions' => $permissions],
-					['user_id' => $user_id],
+				$this->updatePermissions(
+					$username,
+					$old_permissions,
+					$permissions,
 				);
 			}
 		} else {
@@ -75,7 +75,7 @@ class SandstormSessionProvider extends SessionProvider {
 					[
 						'user_id' => $user_id,
 						'username' => $username,
-						'permissions' => $permissions,
+						'permissions' => '',
 					],
 					__METHOD__,
 					['IGNORE'],
@@ -86,10 +86,84 @@ class SandstormSessionProvider extends SessionProvider {
 				// Keep appending " 2" until we get a unique username.
 				$username .= ' 2';
 			}
+			$this->updatePermissions($username, '', $permissions);
 		}
 
 
 		return $username;
+	}
+
+	private function diffPermissions($oldstr, $newstr) {
+		$oldperm = array();
+		$newperm = array();
+		foreach(explode(",", $oldstr) as $perm) {
+			$oldperm[$perm] = true;
+		}
+		foreach(explode(",", $newstr) as $perm) {
+			$newperm[$perm] = true;
+		}
+
+		$remove = array();
+		$add = array();
+		foreach($oldperm as $key => $val) {
+			if(!$newperm[$key]) {
+				$remove[] = $key;
+			}
+		}
+		foreach($newperm as $key => $val) {
+			if(!$oldperm[$key]) {
+				$add[] = $key;
+			}
+		}
+		return [
+			'add' => $add,
+			'remove' => $remove,
+		];
+	}
+
+	private function updatePermissions($username, $old_perm, $new_perm) {
+		$db = wfGetDB(DB_PRIMARY);
+		$res = $db->select(
+			'user',
+			['user_id'],
+			['user_name' => $username],
+		);
+		if($res->numRows() == 0) {
+			// TODO: what to do here? It seems likely, as we'll
+			// be called before we've returned the user to
+			// the rest of the codebase.
+			$res->free();
+			return;
+		}
+		$row = $res->fetchRow();
+		$user_id = $row['user_id'];
+		$res->free();
+		$diff = $this->diffPermissions($old_perm, $new_perm);
+		foreach($diff['remove'] as $group) {
+			$db->delete(
+				'user_groups',
+				[
+					'ug_user' => user_id,
+					'ug_group' => $group,
+				],
+			);
+		}
+		foreach($diff['add'] as $group) {
+			$db->insert(
+				'user_groups',
+				[
+					'ug_user' => $user_id,
+					'ug_group' => $group,
+				],
+				__METHOD__,
+				['IGNORE'],
+			);
+		}
+		$this->sandstormDB->update(
+			'sandstorm_user',
+			['permissions' => $permissions],
+			['user_id' => $user_id],
+		);
 	}
 
 	public function getVaryHeaders() {
