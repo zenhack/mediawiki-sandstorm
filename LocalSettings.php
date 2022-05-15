@@ -171,6 +171,7 @@ wfLoadSkin( 'Vector' );
 wfLoadExtension( 'CodeEditor' );
 wfLoadExtension( 'WikiEditor' );
 
+wfLoadExtension( 'ParserFunctions' );
 wfLoadExtension( 'SandstormAuth' );
 
 
