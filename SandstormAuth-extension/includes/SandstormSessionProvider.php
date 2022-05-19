@@ -106,12 +106,12 @@ class SandstormSessionProvider extends SessionProvider {
 		$remove = array();
 		$add = array();
 		foreach($oldperm as $key => $val) {
-			if(!$newperm[$key]) {
+			if(!array_key_exists($key, $newperm)) {
 				$remove[] = $key;
 			}
 		}
 		foreach($newperm as $key => $val) {
-			if(!$oldperm[$key]) {
+			if(!array_key_exists($key, $oldperm)) {
 				$add[] = $key;
 			}
 		}
@@ -143,7 +143,7 @@ class SandstormSessionProvider extends SessionProvider {
 			$db->delete(
 				'user_groups',
 				[
-					'ug_user' => user_id,
+					'ug_user' => $user_id,
 					'ug_group' => $group,
 				],
 			);
@@ -161,7 +161,7 @@ class SandstormSessionProvider extends SessionProvider {
 		}
 		$this->sandstormDB->update(
 			'sandstorm_user',
-			['permissions' => $permissions],
+			['permissions' => $new_perm],
 			['user_id' => $user_id],
 		);
 	}
