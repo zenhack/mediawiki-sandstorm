@@ -11,10 +11,10 @@ class SandstormSessionProvider extends SessionProvider {
 	protected function postInitSetup() {
 		$this->sandstormDB = DatabaseSqlite::newStandaloneInstance("/var/sandstorm-extension.sqlite");
 		$this->sandstormDB->query(
-			"CREATE TABLE IF NOT EXISTS sandstorm_user " .
-			"    ( user_id VARCHAR PRIMARY KEY" .
-			"    , username VARCHAR UNIQUE NOT NULL" .
-			"    , permissions VARCHAR NOT NULL" .
+			"CREATE TABLE IF NOT EXISTS sandstorm_user\n" .
+			"    ( user_id VARCHAR PRIMARY KEY\n" .
+			"    , username VARCHAR UNIQUE NOT NULL\n" .
+			"    , permissions VARCHAR NOT NULL\n" .
 			"    )"
 		);
 	}
