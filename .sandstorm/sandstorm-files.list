@@ -763,6 +763,7 @@ opt/app/mediawiki/includes/Permissions/PermissionStatus.php
 opt/app/mediawiki/includes/Permissions/RestrictionStore.php
 opt/app/mediawiki/includes/Permissions/UserAuthority.php
 opt/app/mediawiki/includes/Pingback.php
+opt/app/mediawiki/includes/ProtectionForm.php
 opt/app/mediawiki/includes/ProxyLookup.php
 opt/app/mediawiki/includes/RawMessage.php
 opt/app/mediawiki/includes/ReadOnlyMode.php
@@ -852,6 +853,7 @@ opt/app/mediawiki/includes/actions/Hook/UnwatchArticleHook.php
 opt/app/mediawiki/includes/actions/Hook/WatchArticleCompleteHook.php
 opt/app/mediawiki/includes/actions/Hook/WatchArticleHook.php
 opt/app/mediawiki/includes/actions/InfoAction.php
+opt/app/mediawiki/includes/actions/ProtectAction.php
 opt/app/mediawiki/includes/actions/SubmitAction.php
 opt/app/mediawiki/includes/actions/ViewAction.php
 opt/app/mediawiki/includes/actions/WatchAction.php
@@ -1392,6 +1394,8 @@ opt/app/mediawiki/includes/libs/rdbms/exception/DBConnectionError.php
 opt/app/mediawiki/includes/libs/rdbms/exception/DBError.php
 opt/app/mediawiki/includes/libs/rdbms/exception/DBExpectedError.php
 opt/app/mediawiki/includes/libs/rdbms/exception/DBQueryError.php
+opt/app/mediawiki/includes/libs/rdbms/exception/DBTransactionError.php
+opt/app/mediawiki/includes/libs/rdbms/exception/DBTransactionStateError.php
 opt/app/mediawiki/includes/libs/rdbms/field/Field.php
 opt/app/mediawiki/includes/libs/rdbms/field/SQLiteField.php
 opt/app/mediawiki/includes/libs/rdbms/lbfactory/ILBFactory.php
@@ -1528,6 +1532,7 @@ opt/app/mediawiki/includes/page/RollbackPageFactory.php
 opt/app/mediawiki/includes/page/WikiFilePage.php
 opt/app/mediawiki/includes/page/WikiPage.php
 opt/app/mediawiki/includes/page/WikiPageFactory.php
+opt/app/mediawiki/includes/pager/AlphabeticPager.php
 opt/app/mediawiki/includes/pager/IndexPager.php
 opt/app/mediawiki/includes/pager/Pager.php
 opt/app/mediawiki/includes/pager/RangeChronologicalPager.php
@@ -1962,6 +1967,7 @@ opt/app/mediawiki/includes/specials/SpecialWithoutInterwiki.php
 opt/app/mediawiki/includes/specials/forms/PreferencesFormOOUI.php
 opt/app/mediawiki/includes/specials/helpers/LoginHelper.php
 opt/app/mediawiki/includes/specials/pagers/ContribsPager.php
+opt/app/mediawiki/includes/specials/pagers/UsersPager.php
 opt/app/mediawiki/includes/specials/redirects/SpecialAllMyUploads.php
 opt/app/mediawiki/includes/specials/redirects/SpecialListAdmins.php
 opt/app/mediawiki/includes/specials/redirects/SpecialListBots.php

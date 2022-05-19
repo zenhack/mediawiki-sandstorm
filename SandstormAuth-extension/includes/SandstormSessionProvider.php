@@ -160,7 +160,7 @@ class SandstormSessionProvider extends SessionProvider {
 		$this->sandstormDB->update(
 			'sandstorm_user',
 			['permissions' => $new_perm],
-			['user_id' => $user_id],
+			['username' => $username],
 		);
 	}
 
