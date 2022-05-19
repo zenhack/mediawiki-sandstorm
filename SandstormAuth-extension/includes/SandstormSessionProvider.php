@@ -30,8 +30,6 @@ class SandstormSessionProvider extends SessionProvider {
 
 		$username = $this->ensureUser($user_id, $username, $permissions, $tabId);
 
-		// TODO: enforce permissions somehow.
-
 		return new SessionInfo(SessionInfo::MAX_PRIORITY, [
 			"provider" => $this,
 			"id" => $tabId,
