@@ -186,5 +186,5 @@ wfLoadExtension( 'SandstormAuth' );
 $wgBreakFrames = false;
 $wgEditPageFrameOptions = false;
 
-# Uncomment this for stack traces in the browser, useful for debugging:
-#$wgShowExceptionDetails = true;
+# Full stack traces in the browser, useful for debugging:
+$wgShowExceptionDetails = true;
