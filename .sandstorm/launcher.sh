@@ -8,6 +8,7 @@ fi
 CURRENT_VERSION="$(cat /opt/app/.sandstorm/version.txt)"
 if [ ! -e /var/VERSION ]; then
 	cp -r /opt/app/init-var/* /var/
+	mkdir -p /var/lib/nginx
 fi
 
 [[ "$(cat /var/VERSION)" == "${CURRENT_VERSION}" ]] || (cd /opt/app/mediawiki && php maintenance/update.php --quick && echo $CURRENT_VERSION > /var/VERSION)

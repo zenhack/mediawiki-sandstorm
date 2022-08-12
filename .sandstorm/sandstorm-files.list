@@ -130,12 +130,6 @@ opt/app/.sandstorm/version.txt
 opt/app/init-var
 opt/app/init-var/VERSION
 opt/app/init-var/lib
-opt/app/init-var/lib/nginx
-opt/app/init-var/lib/nginx/body
-opt/app/init-var/lib/nginx/fastcgi
-opt/app/init-var/lib/nginx/proxy
-opt/app/init-var/lib/nginx/scgi
-opt/app/init-var/lib/nginx/uwsgi
 opt/app/init-var/lib/php
 opt/app/init-var/lib/php/sessions
 opt/app/init-var/lib/php/sessions/.keep
@@ -143,16 +137,13 @@ opt/app/init-var/log
 opt/app/init-var/log/nginx
 opt/app/init-var/log/nginx/error.log
 opt/app/init-var/log/php7.3-fpm.log
-opt/app/init-var/mediawiki-cache
 opt/app/init-var/mediawiki-images
 opt/app/init-var/mediawiki-images/.htaccess
 opt/app/init-var/mediawiki-images/README
 opt/app/init-var/run
 opt/app/init-var/run/nginx.pid
-opt/app/init-var/run/php
 opt/app/init-var/wiki
 opt/app/init-var/wiki/.htaccess
-opt/app/init-var/wiki/locks
 opt/app/init-var/wiki/wiki.sqlite
 opt/app/init-var/wiki/wiki_jobqueue.sqlite
 opt/app/init-var/wiki/wiki_l10n_cache.sqlite
@@ -3238,6 +3229,7 @@ opt/app/mediawiki/vendor/psr/log/Psr/Log/LoggerAwareTrait.php
 opt/app/mediawiki/vendor/psr/log/Psr/Log/LoggerInterface.php
 opt/app/mediawiki/vendor/psr/log/Psr/Log/NullLogger.php
 opt/app/mediawiki/vendor/ralouphie/getallheaders/src/getallheaders.php
+opt/app/mediawiki/vendor/symfony/deprecation-contracts/function.php
 opt/app/mediawiki/vendor/symfony/polyfill-php80/bootstrap.php
 opt/app/mediawiki/vendor/wikimedia/assert/src/Assert.php
 opt/app/mediawiki/vendor/wikimedia/at-ease/src/Wikimedia/AtEase/AtEase.php
