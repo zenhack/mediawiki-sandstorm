@@ -1,4 +1,4 @@
-From 246546f26cfe823354995c3822c1dbe149c19151 Mon Sep 17 00:00:00 2001
+From 2ba2644755da531b0e94e1c9f71a9e4213516e68 Mon Sep 17 00:00:00 2001
 From: Ian Denhardt <ian@zenhack.net>
 Date: Sun, 20 Mar 2022 22:07:53 -0400
 Subject: [PATCH 4/5] Set the URL bar using postMessage
@@ -8,10 +8,10 @@ Subject: [PATCH 4/5] Set the URL bar using postMessage
  1 file changed, 5 insertions(+)
 
 diff --git a/resources/src/startup/startup.js b/resources/src/startup/startup.js
-index da4ea680cc..c97c3499ee 100644
+index e2452c4feaf..072db295afc 100644
 --- a/resources/src/startup/startup.js
 +++ b/resources/src/startup/startup.js
-@@ -164,3 +164,8 @@ if ( !isCompatible( navigator.userAgent ) ) {
+@@ -201,3 +201,8 @@ if ( !isCompatible( navigator.userAgent ) ) {
  		};
  	}() );
  }
@@ -21,5 +21,5 @@ index da4ea680cc..c97c3499ee 100644
 +  setPath: location.pathname + location.search,
 +}, '*');
 -- 
-2.35.1
+2.39.2
 

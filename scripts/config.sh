@@ -1,1 +1,1 @@
-mediawiki_revision='1.37.4'
+mediawiki_revision='1.39.2'

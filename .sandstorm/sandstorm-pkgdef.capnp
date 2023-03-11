@@ -19,7 +19,7 @@ const pkgdef :Spk.PackageDefinition = (
 
     appTitle = (defaultText = "MediaWiki"),
 
-    appVersion = 2,  # Increment this for every release.
+    appVersion = 3,  # Increment this for every release.
 
     appMarketingVersion = (defaultText = embed "version.txt"),
 

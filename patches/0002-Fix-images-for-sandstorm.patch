@@ -1,4 +1,4 @@
-From cfc574667a066cca400b89fb950d2e9262c7dd94 Mon Sep 17 00:00:00 2001
+From 15ebe3b276da27d3df8ea7cece13876c6232942b Mon Sep 17 00:00:00 2001
 From: Jason Paryani <github@jparyani.com>
 Date: Fri, 4 Mar 2016 14:57:27 -0800
 Subject: [PATCH 2/5] Fix images for sandstorm
@@ -14,7 +14,7 @@ Subject: [PATCH 2/5] Fix images for sandstorm
 
 diff --git a/images b/images
 new file mode 120000
-index 0000000000..a35516b45a
+index 00000000000..a35516b45ad
 --- /dev/null
 +++ b/images
 @@ -0,0 +1 @@
@@ -29,5 +29,5 @@ similarity index 100%
 rename from images/README
 rename to images.orig/README
 -- 
-2.35.1
+2.39.2
 
