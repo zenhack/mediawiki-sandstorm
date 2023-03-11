@@ -1,27 +1,28 @@
-From 96c4921d00f8ba6d6d352e02f5f900f292ae1d1b Mon Sep 17 00:00:00 2001
+From 0df29563a3eb3514f1124245a1b185eb9bd3c2b5 Mon Sep 17 00:00:00 2001
 From: Jason Paryani <github@jparyani.com>
 Date: Tue, 22 Jul 2014 16:36:17 -0700
 Subject: [PATCH 1/5] Fix handling of PROTO_RELATIVE in wfExpandUrl
 
 ---
- includes/GlobalFunctions.php | 4 ++++
- 1 file changed, 4 insertions(+)
+ includes/utils/UrlUtils.php | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/includes/GlobalFunctions.php b/includes/GlobalFunctions.php
-index ce9268af04..9fff3c1508 100644
---- a/includes/GlobalFunctions.php
-+++ b/includes/GlobalFunctions.php
-@@ -528,6 +528,10 @@ function wfExpandUrl( $url, $defaultProto = PROTO_CURRENT ) {
+diff --git a/includes/utils/UrlUtils.php b/includes/utils/UrlUtils.php
+index 1c7ebd04711..9b8a45a0032 100644
+--- a/includes/utils/UrlUtils.php
++++ b/includes/utils/UrlUtils.php
+@@ -173,6 +173,11 @@ class UrlUtils {
+ 		$bits = $this->parse( $url );
  
- 	if ( $bits && isset( $bits['path'] ) ) {
- 		$bits['path'] = wfRemoveDotSegments( $bits['path'] );
-+        if ( $defaultProto === PROTO_RELATIVE ) {
-+            $bits['scheme'] = '';
-+            $bits['delimiter'] = '//';
-+        }
- 		return wfAssembleUrl( $bits );
- 	} elseif ( $bits ) {
- 		# No path to expand
+ 		if ( $bits && isset( $bits['path'] ) ) {
++			if ( $defaultProto === PROTO_RELATIVE ) {
++				$bits['scheme'] = '';
++				$bits['delimiter'] = '//';
++			}
++
+ 			$bits['path'] = $this->removeDotSegments( $bits['path'] );
+ 			return $this->assemble( $bits );
+ 		} elseif ( $bits ) {
 -- 
-2.35.1
+2.39.2
 
